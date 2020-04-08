@@ -20,7 +20,7 @@ class App
             $this->isLocal = true;
         }
 
-        $this->db = new mysqli("localhost", "root", "");
+        $this->db = new mysqli("localhost", "root", "root");
         if ($this->db->connect_errno) {
             echo "Failed to connect to MySQL: " . $this->db->connect_error;
         }
@@ -308,7 +308,7 @@ $app->run();
                     })
                     .done(function() {
                         var html = [
-                            '<tr class="cleanable-item">',
+                            '<tr class="cleanable-item item-' + name + '">',
                                 '<td><input class="cleanable-checkbox" type="checkbox" value="' + name + '"></td>',
                                 '<td class="db-name">' + name + '</td>',
                                 '<td>',
