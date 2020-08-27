@@ -74,7 +74,7 @@ class App
 
     protected function delete($name)
     {
-        $result = mysqli_query($this->db, "DROP DATABASE IF EXISTS $name");
+        $result = mysqli_query($this->db, "DROP DATABASE IF EXISTS `$name`");
         if ($result) {
             die(json_encode(array('error' => false)));
         } else {
