@@ -56,8 +56,8 @@ class App
                 $this->connectError = true;
             }
         } else {
-            $username = $this->config->db->username;
-            $password = $this->config->db->password;
+            $username = isset($this->config->db->username) ? $this->config->db->username : '';
+            $password = isset($this->config->db->password) ? $this->config->db->password : '';
             $this->db = @mysqli_connect('localhost', $username, $password);
             
             $this->connected = !!$this->db;
